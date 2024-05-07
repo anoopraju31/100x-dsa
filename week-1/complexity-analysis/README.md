@@ -23,6 +23,8 @@ Big-O notation represents the upper bound of the running time of an algorithm. T
 
 We say, a function `f(n)` is `O(g(n))` if there exists a constant `𝑐 > 0`and a value **𝑛<sub>0</sub>** (usually some threshold) such that for all `n` greater than **𝑛<sub>0</sub>**, the value of f(n) is bounded above by `c⋅g(n)`.
 
+- `f(n) = O(g(n))`, if and only if there exists a **c > 0** and **n<sub>0</sub> > 0** such that **f(n) < c.g(n)** forever **n > n<sub>0</sub>**.
+
 Example:
 - f(n) = n^2  + 5n - 6
 - g(n) = 2n ^ 2
