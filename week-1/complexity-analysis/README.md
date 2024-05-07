@@ -29,3 +29,12 @@ Example:
 - So g(n) ≥ f(n)  n ≥ 3  (Solved using quadratic equation)
 - So there exists, c = 2 and  = 3 such that f(n) ≤ c * g(n) for all n ≥ 
 - So f(n) = O(g(n))
+
+#### Omega Notation
+Omega notation represents the lower bound of the running time of an algorithm. Thus, it provides the best case complexity of an algorithm.
+        - Ω(g(n)) = { f(n): there exist positive constants c and n0
+            such that 0 ≤ cg(n) ≤ f(n) for all n ≥ n0 }
+
+![](images/omega.png)
+
+For example, f(n) = n^2 and g(n) = n + 10
