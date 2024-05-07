@@ -26,8 +26,12 @@ We say, a function `f(n)` is `O(g(n))` if there exists a constant `𝑐 > 0`and 
 - `f(n) = O(g(n))`, if and only if there exists a **c > 0** and **n<sub>0</sub> > 0** such that **f(n) < c.g(n)** forever **n > n<sub>0</sub>**.
 
 Example:
-- f(n) = n^2  + 5n - 6
-- g(n) = 2n ^ 2
+- f(n) = n<sup>2</sup>  + 5n - 6
+- g(n) = 2n<sup>2</sup>
+- c.g(n) - f(n) > 0
+- 2n<sup>2</sup> - (n<sup>2</sup>  + 5n - 6) > 0
+- n<sup>2</sup>  - 5n + 6 > 0
+- (n - 2)(n - 3) > 0
 - So g(n) ≥ f(n)  n ≥ 3  (Solved using quadratic equation)
 - So there exists, c = 2 and  = 3 such that f(n) ≤ c * g(n) for all n ≥ 
 - So f(n) = O(g(n))
