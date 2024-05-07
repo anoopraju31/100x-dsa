@@ -7,3 +7,25 @@ There are two primary aspects of complexity analysis:
 1. **Time Complexity:** This measures the amount of time an algorithm takes to run as a function of the length of its input. Time complexity is often expressed using **Big O notation**, which provides an upper bound on the growth rate of the algorithm's running time. Common time complexities include `O(1)` (**constant time**), `O(log n)` (**logarithmic time**), `O(n)` (**linear time**), `O(n log n)` (**linearithmic time**), `O(n^2)` (**quadratic time**), `O(2^n)` (**exponential time**), etc.
 
 2. **Space Complexity:** This measures the amount of memory an algorithm uses as a function of the length of its input. Space complexity is also expressed using **Big O notation**. It describes the maximum amount of memory required by the algorithm at any point during its execution, not necessarily the total memory used. Common space complexities include `O(1)` (**constant space**), `O(n)` (**linear space**), `O(n^2)` (**quadratic space**), etc.
+
+### Asymptotic Notations
+Asymptotic notations are the mathematical notations used to describe the running time of an algorithm when the input tends towards a particular value or a limiting value.
+
+There are mainly three asymptotic notations:
+1. **Big-O notation**
+2. **Omega notation**
+3. **Theta notation**
+
+#### Big-O Notation
+Big-O notation represents the upper bound of the running time of an algorithm. Thus, it gives the worst-case complexity of an algorithm.
+
+![](images/big0.png)
+
+We say, a function `f(n)` is `O(g(n))` if there exists a constant `𝑐 > 0`and a value **𝑛<sub>0</sub>** (usually some threshold) such that for all `n` greater than **𝑛<sub>0</sub>**, the value of f(n) is bounded above by `c⋅g(n)`.
+
+Example:
+- f(n) = n^2  + 5n - 6
+- g(n) = 2n ^ 2
+- So g(n) ≥ f(n)  n ≥ 3  (Solved using quadratic equation)
+- So there exists, c = 2 and  = 3 such that f(n) ≤ c * g(n) for all n ≥ 
+- So f(n) = O(g(n))
