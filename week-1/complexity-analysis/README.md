@@ -54,3 +54,90 @@ Theta notation encloses the function from above and below. Since it represents t
             such that 0 ≤ c1g(n) ≤ f(n) ≤ c2g(n) for all n ≥ n0 }
 ```
 ![](images/theta.png)
+
+
+### Problems
+1. Analyse the complexity for the following code
+    ``` js
+    for(let i=0; i<k; i++) {
+        for(let j=0; j<k; j++) {
+            console.log(i + " " + j);
+        }
+    }
+    ```
+    **Solution:** O(n<sup>2</sup>)
+    -  First, we need to generate a function f(n) that returns the time taken to execute for any input n.
+    - For a given n, the outer loop of i runs for 0 to n-1.
+    - For each value of i, the inner loop runs again for 0 to n-1
+    - So for each i, the inner loop runs n times.
+    - Total complexity = n + n + n + …. + n (n times as i runs for n times)
+    - f(n) = n ^ 2
+    - So T.C = O(k^2)
+
+2. Analyse the complexity for the following code
+    ``` js
+    for(let i=0; i<k; i++) {
+        for(let j=0; j<=i; j++) {
+            console.log(i + " " + j);
+        }
+    }
+    ```
+    **Solution:** O(n<sup>2</sup>)
+    - For a given i, j runs from 0 to i
+    - For i = 0: j only runs 1 time
+    - For i = 1: j runs 2 times
+    - For i = 2: j runs 3 times
+    - For i = 3: j runs 4 times
+    - and so on
+    - For any general i = k: j runs for 0, 1, 2, …, k so k times
+    
+    - So total complexity = 1 + 2 + 3 + …. + n = 
+    - Complexity: O(k^2)
+
+3. Analyse the complexity for the following code
+    ``` js
+    for(let i=1; i<n; i *= 2) {
+        console.log(i);
+    }
+    ```
+    **Solution:** O(log<sub>2</sub>n)
+    - Let’s see how i runs
+    - i = 1, 2, 4, 8, 16, …, x, where x is the highest power of 2 less than n. 
+    - Let’s say x = , then So how many steps? 
+    - Step 0: i = 2 ^ 0
+    - Step 1: i = 2 ^ 1
+    - Step 2: i = 2 ^ 2
+    - Step 3: i = 2 ^ 3
+    - ..
+    - Step p: i = 2 ^ p >= x
+ 
+    - But what is p? 
+
+    - Complexity: O(log<sub>2</sub>n)
+
+4. Analyse the complexity for the following code
+    ``` js
+    for(let i=1; i<n; i++) {
+        for(let j=1; j<n; j+=i) {
+            console.log(i + " " + j);
+        }
+    }
+    ```
+    **Solution:** O(nlogn)
+    - For i = 1, j runs n times (as it is same as j += 1)
+    - For i = 2, j runs n/2 times (as j += 2)
+    - For i = 3, j runs n/3 times
+    - For general i = k, j runs n / k times
+ 
+    - n + n/2 + n/3 + n/4 + …. + n/k +.. + 1
+    - n (1 + 1/2 + 1/3 + … 1/n)
+ 
+    - Now we need to find the complexity of: 
+ 
+    - What is Big - O? We need to find g(n) which is greater than f(n) 
+    - We round each number k, down to its nearest power of 2 less than equal to k
+    - i.e 3 can be rounded down to 2, 4 can be rounded down to 4, 5 can be rounded down to 4
+ 
+    - Obviously, k > 2 ^ p, where 2 ^ p is the nearest power of 2 less than equal to k
+ 
+    - So total complexity: O(n * logn)
