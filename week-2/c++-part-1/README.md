@@ -117,3 +117,61 @@ C++ is a strictly types language. So, we need to specify the data type of all va
 **Note:** Sizes of **derived** data types and **user defined** data types can be calculated from the size of **primary** data types. For example an integer array of length 8, will contain 8 integers. Each integer is 4 bytes. So the array size will be 8 * 4 bytes = 32 bytes
 
 **Note:** The sizes (especially int and long long int) helps us identify which data type to use for inputs and calculations.
+
+
+### Conditional statements in C++
+C++ like Javascript has the following conditional statements:
+1. **if else**
+2. **switch**
+3. **conditional operator**
+
+#### if-else statements
+``` cpp
+if (condition_1) {
+  // Executed if condition_1 is true
+} else if (condition_2) {
+  // Executed if condition_1 is false and condition_2 is true
+} else {
+  // Executed if both condition_1 and condition_2 are false
+}
+```
+We can even have nested if else statements or just single if statement
+``` cpp
+// Only if statement
+if (condition) {}
+
+// Nested if else
+if (condition_outer) {
+   if (condition_inner) {}
+   else {}
+} else {}
+```
+
+#### switch statements
+``` cpp
+switch(variable) {
+   case 1:
+	   // When variable is 1
+	   break;
+	 case 2:
+		 // When variable is 2
+		 break;
+	 default:
+		 // When none of the case statements is satisfied
+}
+```
+**Note:** The case value must be of type integer or character.
+**Note:** 
+Like Javascript, default statement is optional. Also break keywords are optional.
+
+
+#### Conditional Operations
+``` cpp
+condition ? true_statement : false_statement
+```
+example:
+``` cpp
+bool is_even = (n % 2 == 0) ? true : false;
+
+int absolute_diff = (a > b) ? a - b : b - a;
+```
