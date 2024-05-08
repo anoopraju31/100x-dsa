@@ -166,3 +166,20 @@ Theta notation encloses the function from above and below. Since it represents t
  
 8. **O(2<sup>n</sup>)**: Exponential complexity. 
     - Example: bitmasking
+
+### Master Theorem
+The **Master Theorem** is a handy tool in algorithm analysis, particularly in the context of **divide-and-conquer algorithms**. It provides a straightforward way to analyze the time complexity of **recursive algorithms** that follow a specific form.
+
+The theorem states that if you have a recurrence relation of the form:
+    **T(n) = aT(n/b) + f(n)**
+where:
+- **T(n)** is the time complexity of the algorithm
+- **a** is the number of subproblems generated in each recursion.
+- **b** is the factor by which the problem size is reduced in each recursion.
+- **f(n)** is the time complexity of the problem and combine the results.
+
+Then the time complexity **T(n)** is given by:
+- if **f(n) = O(n<sup>log<sub>b</sub>a-ϵ</sup>)** for some **ϵ > 0**, where **ϵ** is a constant, then **T(n) = O(n<sup>log<sub>b</sub>a</sup>)**.
+- if **f(n) = O(n<sup>log<sub>b</sub>a</sup>)** then **T(n) = O(f(n))**.
+- if **f(n) = (n<sup>log<sub>b</sub>a+ϵ</sup>)** for some **ϵ > 0**, and if **af(n/b) < kf(n)** for some **k < 1** and sufficiently large **n**, then **O(f(n))**
+
