@@ -141,3 +141,28 @@ Theta notation encloses the function from above and below. Since it represents t
     - Obviously, k > 2 ^ p, where 2 ^ p is the nearest power of 2 less than equal to k
  
     - So total complexity: O(n * logn)
+
+  
+### Some Popular Complexities
+1. **O(1)**: Constant Time Complexity.
+    - Example: a + b, a % b
+
+2. **O(logn)**: Logarithmic Complexity.
+    - Example: Binary Search
+
+3. **O(√n)**: Example: Finding divisors of a number
+ 
+4. **O(n)**: Linear time complexity. 
+    - Example: Linear search, finding maximum element
+ 
+5. **O(n * logn)**: loglinear complexity.
+    - Example: Sorting, Seive of Eratosthenes
+ 
+6. **O(n<sup>2</sup>)**: Quadratic complexity. 
+    - Example: Insertion sort
+ 
+7. **O(n<sup>3</sup>)**: Cubic complexity. 
+    - Example: Floyd Warshall algorithm
+ 
+8. **O(2<sup>n</sup>)**: Exponential complexity. 
+    - Example: bitmasking
