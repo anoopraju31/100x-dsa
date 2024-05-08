@@ -237,3 +237,70 @@ while (i < 10) {
   i++;
 }
 ```
+
+
+### Functions
+- A function is a block of code which only runs when it is called.
+- We can pass data known as parameters into a function.
+- functions are used to perform certain actions ans they are important for reusing code. Define the code once, and use it many times.
+- Functions take in some arguments and returns (may or may not) some values. 
+- The return type of a function determines what type of data is returned. 
+- If the return type is `void`, then it does not return any value.
+
+``` cpp
+int sum(int x, int y) {
+   return x + y;
+}
+
+
+void print_data(int x) {
+		cout<<"Number is: " << x <<endl;
+}
+
+int find_max(int a, int b) {
+   if (a > b) return a;
+   return b;
+}
+
+string concatenate(string a, string b) {
+  string res = "";
+  for(char x: a) res.push_back(x);
+	for(char x: b) res.push_back(x);
+  return res;
+}
+```
+
+#### Function Overloading
+- Function Overloading is defined as the process of having two or more function with the same name, but different in parameters is known as function overloading in C++. 
+- In function overloading, the function is redefined by using either different types of arguments or a different number of arguments.
+
+``` cpp
+int add(int a, int b) {
+  return a + b;
+}
+
+int add(int a, int b, int c) {
+   return a + b + c;
+}
+
+add(2, 3); // Works
+add(2, 3, 4); // Works as well
+```
+
+``` cpp
+int add(int a, int b) {
+   return a + b;
+}
+
+float add(float a, float b) {
+   return a + b;
+}
+
+string add(string a, string b) {
+   return a + b;
+}
+
+add(2, 3); // Works
+add(2.2, 3.5); // Works as well
+add("ab", "cd"); // Works as well
+```
