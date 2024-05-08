@@ -175,3 +175,65 @@ bool is_even = (n % 2 == 0) ? true : false;
 
 int absolute_diff = (a > b) ? a - b : b - a;
 ```
+
+
+### Looping Statements
+C++ like Javascript has the following conditional statements:
+1. **For Loop**
+2. **While Loop**
+3. **Do While loop** (rearly uses)
+
+#### For Loop
+``` cpp
+for (int i=0; i<n; i++) {
+  // do something
+}
+
+// You don't always need to iterate on integer values only. Example:
+for(char i='a'; i<='z'; i++) {
+  // do something
+}
+
+// We also have for-each loop in C++, similar to javascript
+for(int x: arr) {
+  // You get each array values one by one in x. 
+}
+
+// We can also have nested loops
+for(int i=0; i<n; i++) {
+   for(int j=0; j<n; j++) {
+      // Nested loop example
+   }
+}
+```
+
+The middle statement is a `conditional statement` and the last statement is `stepping statement`.  The conditional statement can be anything, that breaks at some point. The stepping statement, should change the iteration variable in any way. We can also initialise and use multiple iteration variables.
+
+``` cpp
+// Example of different way of writing iteration variable
+for(int i=0, j=n-1; i<j; i++, j--) {
+  // Step 1: i = 0, j = n-1
+  // Step 2: i = 1, j = n-2
+  // Step 3: i = 2, j = n-3
+}
+```
+
+#### Early exits
+Sometimes, we might want to break the loop before it runs to completion. Or we might want to skip to the next iteration in some cases. We can do these using break and continue statements respectively.
+
+``` cpp
+for(int i=0; i<n; i++) {
+   if (i == 5) break; // We break when i reaches 5. So it does not continue with remaining iteration
+   if (i % 2 == 0) continue; // We don't execute the loop for even values of i, just continue to next iteration value of i
+   sum += i;
+}
+```
+
+
+#### While Loop
+``` cpp
+while (i < 10) {
+  // do something
+  i++;
+}
+```
