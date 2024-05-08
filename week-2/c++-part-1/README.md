@@ -304,3 +304,71 @@ add(2, 3); // Works
 add(2.2, 3.5); // Works as well
 add("ab", "cd"); // Works as well
 ```
+
+
+### Arrays
+- Collection of elements of similar type is called an **array**. 
+- Similar to javascript However, as C++ is strictly typed, we can only store elements of a single type, unlike Javascript.
+- Each array element has some index. It starts from 0.
+![](images/images.png)
+
+#### Creating Arrays
+1. Specify the size or the initial elements
+    ``` cpp
+    int arr[5];
+
+    arr[0] = 0;
+    cout << arr[0];
+    ```
+    
+    ``` cpp
+    int arr[] = {1, 2, 3, 4};
+
+    // You either need to specify the size or initial elements.
+    int arr[10]; 
+    ```
+2. To Create Dynamic sized array
+    ``` cpp
+    int n;
+    
+    cin>>n;
+    
+    int arr[n];
+
+    // Now take input
+    for(int i=0; i<n; i++) {
+        cin>>arr[i];
+    }
+    ```
+
+3. Using Vector
+    - `vector` is C++ collection that allows us to create dynamic arrays.
+
+#### Loop on arrays
+Similar to javascript we can run a for loop
+``` cpp
+int arr[n];
+
+for(int i=0; i<n; i++) {
+   cin>>arr[i];
+}
+```
+
+We can also run for-each loops as well, these assigns the array values to the variable directly instead of needing to access by index.
+``` cpp 
+for(int x: arr) {
+   cout<<x<<" ";
+}
+```
+
+#### Accessing elements
+We can access elements of array using their index. For example, arr[3] gives the element at index 3, which is the 4th element of the array (Remember, array indices are 0 based)
+
+
+#### Updating elements
+We can assign values to array elements using = operator. Example:
+``` cpp
+arr[0] = 10;
+
+arr[i] = i + 10;
+```
