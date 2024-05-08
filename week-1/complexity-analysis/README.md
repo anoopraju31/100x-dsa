@@ -179,7 +179,40 @@ where:
 - **f(n)** is the time complexity of the problem and combine the results.
 
 Then the time complexity **T(n)** is given by:
-- if **f(n) = O(n<sup>log<sub>b</sub>a-ϵ</sup>)** for some **ϵ > 0**, where **ϵ** is a constant, then **T(n) = O(n<sup>log<sub>b</sub>a</sup>)**.
-- if **f(n) = O(n<sup>log<sub>b</sub>a</sup>)** then **T(n) = O(f(n))**.
-- if **f(n) = (n<sup>log<sub>b</sub>a+ϵ</sup>)** for some **ϵ > 0**, and if **af(n/b) < kf(n)** for some **k < 1** and sufficiently large **n**, then **O(f(n))**
+1. if **(a > b<sup>k</sup>)**, then **T(n) = O(n<sup>log<sub>2</sub>a</sup>)**
+2. if **a == b<sup>k</sup>**, then
+    a. if **p > -1**, then **T(n) = O(n<sup>log<sub>b</sub>a</sup> \* log<sup>p+1</sup>n)**
+    b. if **p = -1**, then **T(n) = O(n<sup>log<sub>b</sub>a</sup> \* log<sub>p + 1</sub>n)**
+    c. if **p < -1**, then **T(n) = O(n<sup>log<sub>b</sub>a</sup>)**
+3. if a < b <sup>k</sup>, then
+    a. if **p >= 0**, then **T(n) = O(n<sup>k</sup> \* log<sup>p</sup>n)**
+    b. if **p < 0**, then **T(n) = O(n<sup>k</sup>)**
 
+#### Problems
+1. Solve for the following recurrence relation:
+    **T(n) = T(n/2) + O(1)**
+
+    **Solution:** O(logn)
+    - Using Master Theorem:
+        - a = 1, b = 2, k = 0, p = 0
+        - a = b<sup>k</sup> and p > -1 is satisfied (Case 2.a)
+        - So, T(n) = O(n<sup>log<sub>2</sub>1</sup> * log<sup>1</sup>n)
+        - T(n) = O(logn)
+
+2. Solve for the following recurrence relation:
+    **T(n) = 3T(n/2) + n<sup>2</sup>**
+    
+    **Solution:** O(n<sup>2</sup>)
+    - Using Master Theorem:
+        - a = -3, b = 2, k = 2, p = 0
+        - So, case 3a is satisied
+        - T(n) = O(n<sup>2</sup> * log<sup>0</sup>n) = O(n<sup>2</sup>)
+
+3. Solve for the following recurrence relation:
+    **T(n) = 3T(n/2) + log<sup>2</sup>n**
+    
+    **Solution:** O(n<sup>log<sub>2</sub>3</sup>)
+    - Using Master's theorem,
+        - a = 3, b = 2, k = 0, p = 2
+        - Case 1 is satisified
+        - T(n) = O(n<sup>log<sub>2</sub>3</sup>)
