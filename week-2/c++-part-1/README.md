@@ -78,7 +78,7 @@ Let's understand it ppart by part:
 #### Fast I/O
 Generally, the input and output streams are tied, which causes flushing before every I/O operation. This can make program execution slower in case of large input size. So, we can untie the streams adding the statements  `cin.tie(NULL)` and `cout.tie(NULL)` at the beginning of the program.
 
-#### `std::ios_base::sync_with_studio` 
+##### `std::ios_base::sync_with_studio` 
 Sets weather the standard C++ streams are synchronized to the standard C stream after each I/O operation. In practice, the means that the synchronized C++ streams are unbuffered and each I/O operation on a c++ stream is immediately applied to the corresponding C stream's buffer. This makes it possible to freely mix C++ and I/O.
 
 In addition, synchronized C++ streams are guaranted to be thread-safe (individual characters output from multiple threads may interleave, but no data races occur).
@@ -101,3 +101,19 @@ int main() {
   // Your program here
 }
 ```
+
+
+### Data Types in C++
+C++ is a strictly types language. So, we need to specify the data type of all variables before assigning them values or using them. Generally, data types are categorised into 3 types: 
+1. Primary / Bulit-in Data Types
+2. Derived Data types
+3. User Defined Data Types
+
+![](images/DatatypesInC.png)
+
+#### Sizes of Primary Data Types
+![](images/cpp_datatype1.png)
+
+**Note:** Sizes of **derived** data types and **user defined** data types can be calculated from the size of **primary** data types. For example an integer array of length 8, will contain 8 integers. Each integer is 4 bytes. So the array size will be 8 * 4 bytes = 32 bytes
+
+**Note:** The sizes (especially int and long long int) helps us identify which data type to use for inputs and calculations.
