@@ -45,3 +45,20 @@ Let's understand it ppart by part:
 6. `return 0;`: 
     - It returns `0` from the `main` function. 
  
+
+### I/O Operations
+#### Output
+
+- For output, we can generally use `cout` statement.
+    ```cpp
+    cout << "Hello World!";
+    ```
+- To print new line we can use `endl` or `\n`.
+- The difference between both are:
+    - `\n`: It insert a new line to the output stream.
+    - `endl`: It insert a new line and flushes the output stream.
+- So eventually, `count << endl;` is equivalent to using `cout << '\n' << flush;`
+- `\n` is much faster than `endl`, so use `\n` everytime if possible (unless you need to flush the output).
+- When printing a single element or some fixed set of elements (like 100) we can use `endl`.
+
+**Note:** By default, all streams (input and output) are tied together. Tied streams ensure that one stream is flushed automatically before each I/O operations on the other stream. To untie, we can use : `cout.tie(NULL);`
