@@ -62,3 +62,42 @@ Let's understand it ppart by part:
 - When printing a single element or some fixed set of elements (like 100) we can use `endl`.
 
 **Note:** By default, all streams (input and output) are tied together. Tied streams ensure that one stream is flushed automatically before each I/O operations on the other stream. To untie, we can use : `cout.tie(NULL);`
+
+#### Input
+- For reading input, we generally use `cin` statement.
+    ``` cpp
+    int x;
+    cin >> x;
+
+    // We can even read multiple space or newline seperated inputs like this
+
+    int x, y;
+    cin >> x >> y;
+    ```
+
+#### Fast I/O
+Generally, the input and output streams are tied, which causes flushing before every I/O operation. This can make program execution slower in case of large input size. So, we can untie the streams adding the statements  `cin.tie(NULL)` and `cout.tie(NULL)` at the beginning of the program.
+
+#### `std::ios_base::sync_with_studio` 
+Sets weather the standard C++ streams are synchronized to the standard C stream after each I/O operation. In practice, the means that the synchronized C++ streams are unbuffered and each I/O operation on a c++ stream is immediately applied to the corresponding C stream's buffer. This makes it possible to freely mix C++ and I/O.
+
+In addition, synchronized C++ streams are guaranted to be thread-safe (individual characters output from multiple threads may interleave, but no data races occur).
+
+If the synchronization is turned off, the C++ standard streams are allowed to buffer their I/O independently, which may be considerably faster in some cases.
+
+So overall, add these 2 things before the start of any program. 
+
+Example:
+``` cpp
+#include<bits/stdc++.h>
+
+using namespace std;
+
+int main() {
+  ios_base::sync_with_stdio(false);
+  cin.tie(NULL);
+  cout.tie(NULL);
+  
+  // Your program here
+}
+```
