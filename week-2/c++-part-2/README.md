@@ -106,3 +106,27 @@ The memory (RAM) is categorised into 4 parts.
 - Variables whose size is determined at run time i.e dynamic sized variables are stored in heap memory. For example, dynamic sized arrays are stored in heap memory.
 - Basically, whatever is created at run time uses heap memory.
 - The varable whose size are fixed and known at compile time are created in stack memory.
+
+
+### Pointers
+**Pointers** in C++ are variables that store memory addresses. They allow you to directly manipulate memory, which can be very powerful but also requires careful handling to avoid bugs like segmentation faults or memory leaks.
+![](images/pointers-in-c.png)
+
+``` cpp
+int x = 10; // We define an integer variable. It gets assigned 4 bytes in stack memory
+int *ptr = &x; // We create a pointer on variable x. The pointer (ptr) stores the address of x
+```
+
+**Note:** `&` is the **addressOf** operator when used on the **right hand** of an` =` sign and can be used for defining references if used on left hand side or in function arguments. Similarly, `*` operator generally is used as valueOf operator except when it is declared with a data type in front of it, in that case it is for declaring a pointer variable.
+
+**Note:**  In C++, references just means aliases (alternative name) to existing variables. They do not occupy any memory.
+
+We can directly modify values of variables using pointers. For example: 
+``` cpp
+int x = 10;
+int *ptr = &x; // We create a pointer on x
+*ptr = 20; // Updates the value of x to 20.
+```
+Note, in the above example the usage of * operator. In the second line we have int *ptr = &x; . This tells us to create a pointer and assign it the value of address of variable x.
+
+In Line 3, we write *ptr = 20 . As mentioned above, * without a data type before it is considered as valueOf operator. So it is read as Set valueOf variable pointed by pointer ptr (i.e x) to 20.
