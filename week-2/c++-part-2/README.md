@@ -92,3 +92,17 @@ s.begin() and s.end();
 s.erase(2, 3); // Erases 3 characters starting from index 2
 s.erase(s.begin() + 1, s.begin() + 5); // Erases all characters in between indices [1, 5)
 ```
+
+### Memory allocation
+![](images/images%20(1).png)
+Generally any program that running needs memory, to store the variables. Whenever a program is running the variables might change so it needed to be stored somewhere. 
+The memory (RAM) is categorised into 4 parts.
+1. **Program Code:** This where the entire program code loaded.
+2. **Global (Static):** Global variables are stored here.
+3. **Stack:** Local Variables and Function calls are stored
+4. **Heap:** Dynamic (Free) memory, this used for dynamic allocation.
+
+- Statically declared arrays (i.e arrays whose size is fixed and known at compile time) are stored in Stack memory.
+- Variables whose size is determined at run time i.e dynamic sized variables are stored in heap memory. For example, dynamic sized arrays are stored in heap memory.
+- Basically, whatever is created at run time uses heap memory.
+- The varable whose size are fixed and known at compile time are created in stack memory.
