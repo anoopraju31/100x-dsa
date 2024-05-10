@@ -14,5 +14,8 @@ int main()
 
     *ptr = 30;
     cout << x << endl;
+
+    int **ptr1 = &ptr;
+    cout << *ptr << " " << **ptr1 << endl;
     return 0;
 }
