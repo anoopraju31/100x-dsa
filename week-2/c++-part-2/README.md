@@ -148,3 +148,41 @@ int *ptr1 = &ptr; // ptr1 stores address of ptr
 cout<< *ptr1; // Prints address of x
 cout<< **ptr1; // Prints value of x
 ```
+
+### Dynamic Allocation
+
+#### Dynamic Arrays
+One of the ways of creating a dynamic array is using pointers. Dynamic allocation allocates memory in the **heap** space. As we know a pointer hold the address of variable, if we can occupy the consective memory locations, we can use pointers to iterate on them ease.
+
+The pointer holds the base address / first elements address. The type of the pointer determines the type of variable it points to. For example integer pointers are pointing to integer variables. So from that we know the memory of each variable uses(integer uses 4 bytes). So we can increment the base address by 4 bytes to get the address of the next element. This is called **pointer arithmetic**.
+
+``` cpp
+int *ptr;
+
+// Let's say ptr stores 2000 which is address of a variable
+// Data type of the variable is integer - 4 bytes
+
+ptr++; // ptr becomes 2004 i.e address of the next element
+ptr--; // ptr becomes 1996 i.e address of previous element
+```
+
+#### Create a dynamic array
+``` cpp
+int *arr;
+int n;
+cin >> n;
+arr = new int[n];
+
+for (int i = 0; i < n; i++) {
+   cin >> arr[i];
+}
+```
+Let's understand what happens when we do `arr[i]`.
+Internally, it translates into this: `arr[i] = *(arr + i)`
+
+Now by pointer arithmetic, it should skip by the suze of the data types. So,
+``` cpp
+arr[i] = *(arr + i * sizeof(int))
+```
+
+The name of the array( i.e `arr`) holds the base address.
