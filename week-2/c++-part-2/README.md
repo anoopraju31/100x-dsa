@@ -186,3 +186,89 @@ arr[i] = *(arr + i * sizeof(int))
 ```
 
 The name of the array( i.e `arr`) holds the base address.
+
+
+### Function Call Arguments
+In C++, function call arguments are the values passed to a function when it's invoked. These arguments can be literals, variables, expressions, or even other function calls. When defining a function, you specify its parameters, which act as placeholders for the arguments that will be passed when the function is called.
+
+Here's a basic example:
+``` cpp
+#include <iostream>
+
+// Function definition with parameters
+void printSum(int a, int b) {
+    std::cout << "Sum is: " << (a + b) << std::endl;
+}
+
+int main() {
+    int x = 5;
+    int y = 3;
+
+    // Function call with arguments
+    printSum(x, y);
+
+    return 0;
+}
+```
+
+In this example:
+- `printSum` is a function that takes two `int` parameters (`a` and `b`).
+- In the `main` function, `x` and `y` are variables with values 5 and 3, respectively.
+When `printSum(x, y)` is called, `x` and `y` are passed as arguments to `printSum`. These arguments are substituted for the parameters `a` and `b` within the function body.
+
+In C++, there are three main ways to pass arguments to functions:
+1. **Call By Value**
+2. **Call By Pointer**
+3. **Call By Reference**
+
+
+#### Call By Value
+``` cpp
+int f(int x, int y) {
+  x = 10;
+  y = 20;
+}
+
+int a = 30;
+int b = 40;
+
+f(a, b);
+
+cout<<a<<" "<< b; // Prints 30 40
+```
+The above code is an example of call by value approach. Here, 2 new variables x and y gets created. So when we change the value of x and y, it does not affect a and b.
+
+**Note:** Whenever you use call by value, new variable is created. So be mindful of this especially during recursions.
+
+
+#### Call By Pointer
+``` cpp
+int f(int *x, int *y) {
+  *x = 10;
+  *y = 20;
+}
+
+int a = 30, b = 40;
+f(&a, &b);
+
+cout<<a<<" "<<b; // Prints 10 20
+```
+
+Here, we are passing address of `a` and `b`. So x holds address of `a` and `y` holds address of `b`.
+Now we are directly making the change in the address, so value of `a` and `b` are updated.
+
+
+#### Call By Reference
+``` cpp
+int f(int &x, int &y) {
+  x = 10;
+  y = 20;
+}
+
+int a = 30, b = 40;
+f(a, b);
+
+cout<<a<<" "<<b; // Prints 10 20
+```
+
+The above code is an example of **call by reference** approach. As mentioned before, `&` means creating a **reference** which is an **alias / alternate name** for the variable. Here `x` and `y` just becomes **alternate names** for the variables `a` and `b` respectively. They don’t have any memory allocation of their own. So setting `x = 10` is equivalent to writing `a = 10`.
