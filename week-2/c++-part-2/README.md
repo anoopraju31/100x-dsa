@@ -127,6 +127,14 @@ int x = 10;
 int *ptr = &x; // We create a pointer on x
 *ptr = 20; // Updates the value of x to 20.
 ```
-Note, in the above example the usage of * operator. In the second line we have int *ptr = &x; . This tells us to create a pointer and assign it the value of address of variable x.
+Note, in the above e xample the usage of * operator. In the second line we have int *ptr = &x; . This tells us to create a pointer and assign it the value of address of variable x.
 
 In Line 3, we write *ptr = 20 . As mentioned above, * without a data type before it is considered as valueOf operator. So it is read as Set valueOf variable pointed by pointer ptr (i.e x) to 20.
+
+
+### UGreen 100PD Charger
+Pointers themselves are always integers / longs as they hold memory location. They generally occupy a size of 8 bytes (or 4 bytes for 32-bit system).
+
+However, we might see the different types of pointers are defined depending on the data type whose address it holds.
+
+For example we define `int *ptr` for pointers holding address of integer variables. Similarly, we define `double *ptr` for pointers holding address of double variables. But the type of the pointer only signifies what is the data type of the variable whose address it holds and does not have anything to do with its memory allocation.
