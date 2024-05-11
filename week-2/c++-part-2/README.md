@@ -350,10 +350,60 @@ class Student {
 }
 ```
 
-### Access Specifiers
+#### Access Specifiers
 - Control the visibility of class members (variables and functions) to other parts of the program.
 1. **Private:** Only methods within the classes can access these data members and member functions. 
 2. **Protected:** Only methods within the class and in derived class can access these.
 3. **Public:** Accessible from anywhere, inside or outside the class.
 
 
+#### When will we use classes for DSA?
+1. Defining new data type for making the task easier and code readable.
+   - Sometimes we would come across the need of creating a custom data type. For examples, let's say we want to store 2 or 3 values for each array element. An example can be a LinkedList. In LinkedList, a node stores the value of the current node and also a pointer to the next node. We can do this without classes as well, but the code quality takes a hit, and also it becomes difficult to manage. With classes, we can do like this:
+      ``` cpp
+      class Node {
+         int data;
+         Node *next; // A pointer to the next node
+      }
+      ```
+2. Encapsulating some common functionalities to make the code cleaner
+   - Sometimes, when our code becomes significantly bigger, and let’s say we are using some utility data structure to solve a part of it (like graph), we can encapsulate it into a class and expose some methods that the rest of the code can interact with. Let’s say, we need an utility that calculates minimum distance between 2 nodes, we can do something like this:
+      ``` cpp
+      class Graph {
+         // data members needed for graph representation
+         
+         public:
+         int calculate_minimum_distance(int node1, int node2) {}
+      }
+      ``` 
+
+3. Avoiding global variables
+   - In some problems like graph based, DP based and some other problems, we might need to maintain some global variables. Generally, it is okay wrt solving DSA problems, but treated as a bad pattern in interviews. Ideally in these cases, you should encapsulate the variables and the functions in classes. The global variables becomes data members, and the functions using them becomes methods. For example,
+      ``` cpp
+      bool found = false; // Global variable
+
+      void f() {
+         if(some condition) {
+               found = true;
+               return;
+         }
+      }
+
+      // Instead we can do
+
+      class Solve {
+         bool found;
+         
+         public:
+            Solve() {
+               this.found = false;
+            }
+            
+            void f() {
+                  if (some condition) {
+                        found = true;
+                        return;
+                  }
+            }
+      }
+      ```
