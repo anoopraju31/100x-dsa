@@ -349,3 +349,11 @@ class Student {
    }
 }
 ```
+
+### Access Specifiers
+- Control the visibility of class members (variables and functions) to other parts of the program.
+1. **Private:** Only methods within the classes can access these data members and member functions. 
+2. **Protected:** Only methods within the class and in derived class can access these.
+3. **Public:** Accessible from anywhere, inside or outside the class.
+
+
