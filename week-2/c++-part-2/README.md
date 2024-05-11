@@ -166,7 +166,7 @@ ptr++; // ptr becomes 2004 i.e address of the next element
 ptr--; // ptr becomes 1996 i.e address of previous element
 ```
 
-#### Create a dynamic array
+#### Create a dynamic array 
 ``` cpp
 int *arr;
 int n;
@@ -272,3 +272,80 @@ cout<<a<<" "<<b; // Prints 10 20
 ```
 
 The above code is an example of **call by reference** approach. As mentioned before, `&` means creating a **reference** which is an **alias / alternate name** for the variable. Here `x` and `y` just becomes **alternate names** for the variables `a` and `b` respectively. They don’t have any memory allocation of their own. So setting `x = 10` is equivalent to writing `a = 10`.
+
+
+### Classes & Objects
+C++ is an object oriented language. The 2 fundamental concepts are:
+1. **Classes** - A class is a **blueprint** or **template** for creating objects. It defines the properties (**data members**) and behaviors (**member functions**) that objects of the class will have. Think of classes as user defined types.
+2. **Objects** - An object is an **instance of a class**. It represents a specific realization of the class blueprint, with its own set of data members and methods
+
+Example, consider you are building a Student management system. Now, for each student you want to store their name, roll no, address and CGPA. One approach is creating different lists for storing each of them. However, that makes things difficult to manage. The better approach is to create a type Student that holds all these values and also exposes methods that can mutate these values and perform certain operations for each student. This idea is called **Encapsulation**.
+
+``` cpp
+class Student {
+   string name;
+   string address;
+   int roll_no;
+   int attendance;
+   float cgpa;
+   
+   public:
+   void mark_attendance() {
+		   this.attendance += 1;
+   }
+}
+
+Student ram = new Student();
+```
+
+#### this keyword
+`this` keyword is used inside a class, that is used to represent the instance of the class calling the method. For example, if we have 2 students, Ram and Shyam and we call `ram.mark_attendance()` then `this` keyword represents the object ram.
+
+
+#### Constructors
+**Constructors** are the first method that is called when an object of the class is created. It is for assigning initial values to the data members. There are 3 types of constructors:
+1. **Default Constructor**: This is by default present, even if we don't manually define a constructor. It does not take any arguments and assigns default values to data members.
+2. **Parameterised Constructor**:  This takes paramenters of the initial values and assigns the data members these values.
+3. **Copy Constructor**: Copies the data member initial values from another object.
+
+``` cpp
+class Student {
+   string name;
+   string address;
+   int roll_no;
+   int attendance;
+   float cgpa;
+   
+   public:
+   // default constructor
+   Student() {
+      this.name = "";
+      this.address = "";
+      this.roll_no = 0;
+      this.attendance = 0;
+      this.cgpa = 0.0;
+   }
+   
+   // Parameterised constructor
+   Student(string name, string address, int roll, float cgpa) {
+	   this.name = name;
+	   this.address = address;
+	   this.roll_no = roll;
+	   this.attendance = 0;
+	   this.cgpa = cgpa;
+   }
+   
+   // Copy constructor
+   Student(Student &s) {
+	   this.name = s.name;
+	   this.address = s.address;
+	   this.roll_no = s.roll_no;
+	   this.attendance = 0;
+	   this.cgpa = s.cgpa;
+   }
+   
+   void mark_attendance() {
+		   this.attendance += 1;
+   }
+}
+```
