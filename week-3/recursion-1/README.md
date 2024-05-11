@@ -18,4 +18,13 @@
 fib(3) fib(2)
 ```
 
+``` cpp
+int fib(int n) {
+    if (n == 1 || n == 0) return n;
+    
+    return fib(n - 1) + fib(n - 2);
+}
+```
+
 #### Function Call Stack
+![](images/1_rJ2sh-q1deQGGGVG5gYyIQ.png)
