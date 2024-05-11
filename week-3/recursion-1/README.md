@@ -28,3 +28,8 @@ int fib(int n) {
 
 #### Function Call Stack
 ![](images/1_rJ2sh-q1deQGGGVG5gYyIQ.png)
+
+#### Structure of a recursive function
+1. **State:** States are the function parameters that change during the recursion. For example, in the case of Fibonacci numbers `fib(n)`, `n` is the state as it changes during every recursive call.
+2. **Base condition:** These are very important to terminate a recursion. Otherwise, the recursion would continue infinitely leading to stack size limit exceeded errors. A base condition is hardcoding the answer for some values of the state (generally smaller values) which we can calculate manually.
+3. **Transition:** We can call it a subproblem, recursive call, or transition. It is basically how a state depends on other states to calculate its value.  Or, calling the next states from the current state.
