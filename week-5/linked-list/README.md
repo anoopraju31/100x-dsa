@@ -91,3 +91,22 @@ int removeNodeAtBeginning(Node *head) {
     return data;
 }
 ```
+
+#### Removing from end
+``` cpp
+int removeNodeFromEnd(Node *head) {
+    Node *current = head;
+    Node *previous = null;
+    
+    while(current->next != NULL) {
+        previous = current;
+        current = current->next;
+    }
+
+    previous->next = NULL;
+    const data = current->next;
+    delete current;
+    
+    return data;
+}
+```

@@ -72,6 +72,25 @@ Node *removeFromBeginning(Node *head)
     return head;
 }
 
+// Removing from end
+int removeFromEnd(Node *head)
+{
+    Node *current = head;
+    Node *previous = NULL;
+
+    while (current->next != NULL)
+    {
+        previous = current;
+        current = current->next;
+    }
+
+    previous->next = NULL;
+    int data = current->data;
+    delete current;
+
+    return data;
+}
+
 int main()
 {
     Node *head = NULL;
@@ -89,6 +108,17 @@ int main()
     head = removeFromBeginning(head);
 
     traverse(head);
+    cout << endl;
+
+    head = addNode(head, 6);
+
+    traverse(head);
+    cout << endl;
+
+    removeFromEnd(head);
+
+    traverse(head);
+    cout << endl;
 
     return 0;
 }
