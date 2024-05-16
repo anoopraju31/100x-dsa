@@ -13,3 +13,25 @@ Each element (or node) in a linked list holds at least 2 values:
 Two Important nodes of a linked list are:
 1. **Head:** The head is a pointer to the first node of a linked list. We begin our iteration from this node. Generally in every linked list, head node will be given
 2. **Tail:** The tail is a pointer to the last node of a linked list. This is optional 
+
+### Creating a Linked List
+
+First let’s define a class that describes a Node. Let’s say each element holds an integer value.
+
+``` cpp
+class Node {
+    int data;
+    Node *next;
+
+    public:
+        Node() {
+            this->data = 0;
+            this->next = NULL;
+        }
+
+        Node(int v, Node *next) {
+            this->data = v;
+            this->next = next;
+        }
+};
+```
