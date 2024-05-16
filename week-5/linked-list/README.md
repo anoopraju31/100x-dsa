@@ -35,3 +35,34 @@ class Node {
         }
 };
 ```
+
+Now let’s write a method that adds a node at the end of the linked list.
+``` cpp
+Node* addAtEnd(Node *head, Node newElement) {
+   if (head == NULL) {
+     // If head is NULL. It means the linked list is empty
+     head = &newElement;
+   } else {
+	   Node *curr = head;
+	   while(curr->next != NULL) {
+		    //next is NULL only for the last node
+	      curr = curr->next;
+	   }
+	   
+	   curr->next = &newElement;
+   }
+   
+   return head;
+}
+```
+
+### Iterating in a linked list
+To iterate in a linked list, we can start at the head node and go as long as we don’t reach the last node. The last node is identified using `node.next == NULL`.
+
+``` cpp
+Node *curr = head;
+while (curr != NULL) {
+  // Do something with curr node
+  curr = curr->next;
+}
+```
