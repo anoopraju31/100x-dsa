@@ -66,3 +66,14 @@ while (curr != NULL) {
   curr = curr->next;
 }
 ```
+
+### Operations on a linked list
+#### Add a node at beginning
+``` cpp
+Node* addNodeAtBegining(Node* head, int data) {
+    Node *node = new Node(data, head);
+    head = node;
+
+    return head;
+}
+```

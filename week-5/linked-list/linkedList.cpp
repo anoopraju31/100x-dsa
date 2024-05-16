@@ -52,6 +52,15 @@ Node *addNode(Node *head, int val)
     return head;
 }
 
+// Add a node at beginning
+Node *addAtBeginning(Node *head, int data)
+{
+    Node *node = new Node(data, head);
+    head = node;
+
+    return head;
+}
+
 int main()
 {
     Node *head = NULL;
@@ -61,6 +70,7 @@ int main()
     head = addNode(head, 3);
     head = addNode(head, 4);
     head = addNode(head, 5);
+    head = addAtBeginning(head, 0);
 
     traverse(head);
 
