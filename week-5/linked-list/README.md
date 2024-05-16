@@ -77,3 +77,17 @@ Node* addNodeAtBegining(Node* head, int data) {
     return head;
 }
 ```
+
+#### Removing node from beginning
+``` cpp
+int removeNodeAtBeginning(Node *head) {
+    Node *current = head;
+    head = head.next;
+
+    int data = current->data;
+
+    delete current;
+
+    return data;
+}
+```
