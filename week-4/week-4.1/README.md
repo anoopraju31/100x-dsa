@@ -3,6 +3,7 @@
 ### Contents:
 - [**What is Binary Search**](#binary-search---part-1)
 - [**How does Binary Search work?**](#how-does-binary-search-work)
+- [**Complexity Analysis**](#complexity-analysis)
 
 
 ### What is Binary Search
@@ -25,3 +26,26 @@ Following is how the binary search program would execute:
 2. Now we know `7 > 4`. And as the array is increasing, it is definitely on the RHS. So we can just discard the left half and continue our search on the right half. So, the new search space we are considering is `[5, 6, 7, 8]`.
 3. Repeat the same process. The **middle element** is `6`. As `7 > 6`, we know it lies on the RHS. So reject the left half. New search space becomes `[7, 8]`.
 4. The middle element is 7. As it is the same as the requested element, so we return it.
+
+
+### Complexity Analysis
+
+- In **binary search**, as discussed, half of the search space is rejected every iteration. So in the worst case, we will be continuing till we are left with at least one element.
+- So initially we start with `N` elements.
+- After the first iteration, we have `N/2` elements
+- After the second iteration, `N/4` elements.
+- And so on.
+
+```
+N -> N/2 -> N/4 -> N/8 -> N/16 -> ..... -> 1
+```
+
+- We can also write this as,
+    ```
+    N -> N/2 -> N/(2^2) -> N/(2^3) -> ..... -> N/(2^k)
+    ```
+    where `N/(2^k) = 1` and it runs for `k` iterations.
+
+- So **k = log<sub>2</sub>(N)**
+ 
+- The overall complexity of the binary search algorithm is, **log<sub>2</sub>(N)** where `N` is the search space.
