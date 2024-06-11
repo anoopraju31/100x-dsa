@@ -110,3 +110,37 @@ int removeNodeFromEnd(Node *head) {
     return data;
 }
 ```
+
+#### Removing a random node
+``` cpp
+Node *deleteNode(Node *head, int k)
+{
+    Node *current = head;
+
+    if (head->data == k)
+    {
+        head = head->next;
+        delete current;
+
+        return head;
+    }
+
+    Node *previous = NULL;
+
+    while (current != NULL)
+    {
+        if (current->data == k)
+        {
+            previous->next = current->next;
+            delete current;
+
+            return head;
+        }
+
+        previous = current;
+        current = current->next;
+    }
+
+    return head;
+}
+```
