@@ -36,7 +36,7 @@ bool bs(vector<int> &nums, int target) {
 }
 
 bool twoSum(vector<int> &nums, int k) {
-	sort(nums.begin(), nums.end());
+    sort(nums.begin(), nums.end());
    
     for(int i = 0; i < n; i++) {
 	   int target = k - nums[i];
