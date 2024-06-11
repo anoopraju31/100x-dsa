@@ -4,7 +4,7 @@
 - [**What is Binary Search**](#binary-search---part-1)
 - [**How does Binary Search work?**](#how-does-binary-search-work)
 - [**Complexity Analysis**](#complexity-analysis)
-
+- [**Code**](#code)
 
 ### What is Binary Search
 - **Binary search** is a **searching algorithm**, that works on a **monotonic sequence (increasing or decreasing)** and efficiently searches for an element. 
@@ -35,10 +35,9 @@ Following is how the binary search program would execute:
 - After the first iteration, we have `N/2` elements
 - After the second iteration, `N/4` elements.
 - And so on.
-
-```
-N -> N/2 -> N/4 -> N/8 -> N/16 -> ..... -> 1
-```
+    ```
+    N -> N/2 -> N/4 -> N/8 -> N/16 -> ..... -> 1
+    ```
 
 - We can also write this as,
     ```
@@ -49,3 +48,25 @@ N -> N/2 -> N/4 -> N/8 -> N/16 -> ..... -> 1
 - So **k = log<sub>2</sub>(N)**
  
 - The overall complexity of the binary search algorithm is, **log<sub>2</sub>(N)** where `N` is the search space.
+
+### Code
+``` cpp
+int findIndex(int arr[], int n, int x) {
+	 // lo, hi points to the lowest and highest indices of search space. Currently,
+	 // we are considering the entire array so 0 and n-1 respectively.
+    int lo = 0, hi = n-1;
+   
+    while (lo <= hi) {
+	    int mid = (lo + hi) / 2;
+	    
+        if (arr[mid] == x) return mid;
+        // x is on the right hand side, reject left half
+	    else if (arr[mid] < x) lo = mid + 1;
+		// x is on the left hand side, reject right half
+	    else hi = mid - 1;
+   }
+   
+   // If we come here, then we did not find the element.
+   return -1;
+}
+```
